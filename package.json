@@ -2,6 +2,7 @@
   "name": "goit-react-native",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
+  "homepage": "https://Andriy-Lik.github.io/goit-react-native/",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
