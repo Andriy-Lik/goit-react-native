@@ -33,7 +33,7 @@ const LoginScreen = () => {
             <TextInput 
                 style={screenStyles.input} 
                 value={password}
-                placeholder=".........." 
+                placeholder="Пароль" 
                 onChange={handlePassword} 
             />
             <TouchableOpacity style={buttonStyles.button} onPress={onSubmit}>
