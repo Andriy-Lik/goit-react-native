@@ -13,7 +13,8 @@ export const screenStyles = StyleSheet.create({
         width: 120,
         height: 120,
         marginTop: -60,
-        marginHorizontal: 'auto',
+        marginLeft: 'auto',
+        marginRight: 'auto',
         backgroundColor: '#F6F6F6',
         borderRadius: 16,
     },
@@ -43,10 +44,10 @@ export const screenStyles = StyleSheet.create({
         fontSize: 16,
     },
     regLink: {
-        marginBottom: 78,
+        marginBottom: 45,
     },
     loginLink: {
-        marginBottom: 144,
+        marginBottom: 111,
     },
     text: {
         textAlign: "center",
