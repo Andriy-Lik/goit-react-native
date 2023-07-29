@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, TextInput, Text, TouchableOpacity } from "react-native";
+import { View, TextInput, Text, TouchableOpacity, KeyboardAvoidingView, Platform } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { screenStyles } from '../styles/screenStyles';
 import { buttonStyles } from '../styles/buttonStyles';
@@ -10,19 +10,10 @@ const RegistrationScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = e => {
-        setLogin(e.target.value);
-    };
+    const [showPassword, setShowPassword] = useState(true);
 
-    const handleEmail = e => {
-        setEmail(e.target.value);
-    };
-
-    const handlePassword = e => {
-        setPassword(e.target.value);
-    };
-
-    const onSubmit = () => {
+    
+    const onLogin = () => {
         Keyboard.dismiss();
         setLogin('');
         setEmail('');
@@ -31,32 +22,39 @@ const RegistrationScreen = () => {
 
     return (
         <View style={screenStyles.form}>
-            <View style={screenStyles.addPhoto}></View>
+            <View style={screenStyles.addPhoto}>
                 <TouchableOpacity style={buttonStyles.addPhotoButton}>
                     <Ionicons style={buttonStyles.addPhotoIcon} name="add-circle-outline" size={25} color="#FF6C00"  />
                 </TouchableOpacity>
+            </View>
+                
             <Text style={screenStyles.title}>Реєстрація</Text>
-            <TextInput 
-                style={screenStyles.input} 
-                value={login}
-                placeholder="Логін" 
-                onChange={handleLogin} 
-            />
-            <TextInput 
-                style={screenStyles.input} 
-                value={email}
-                placeholder="Адреса електронної пошти" 
-                onChange={handleEmail} 
-            />
-            <TextInput 
-                style={screenStyles.input} 
-                value={password}
-                placeholder="Пароль" 
-                onChange={handlePassword} 
-            />
-            <TouchableOpacity style={buttonStyles.button} onPress={onSubmit}>
+            <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}>
+                <TextInput 
+                    style={screenStyles.input} 
+                    value={login}
+                    placeholder="Логін" 
+                    onChangeText={setLogin} 
+                />
+                <TextInput 
+                    style={screenStyles.input} 
+                    value={email}
+                    placeholder="Адреса електронної пошти" 
+                    onChangeText={setEmail} 
+                />
+                <TextInput 
+                    style={screenStyles.input} 
+                    value={password}
+                    placeholder="Пароль" 
+                    onChangeText={setPassword} 
+                    secureTextEntry={showPassword}
+                />
+            </KeyboardAvoidingView>
+            
+            <TouchableOpacity style={buttonStyles.button} onPress={onLogin}>
                 <Text style={screenStyles.buttonText}>Зареєстуватися</Text>
             </TouchableOpacity>
+            
             <TouchableOpacity style={screenStyles.regLink}>
                 <Text style={screenStyles.text}>Вже є акаунт? Увійти</Text>
             </TouchableOpacity>

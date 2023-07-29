@@ -10,7 +10,7 @@ export const buttonStyles = StyleSheet.create({
     },
     addPhotoButton: {
         width: 25,
-        marginLeft: 219,
-        marginTop: -39,
+        marginLeft: 107,
+        marginTop: 81,
     },
 });
