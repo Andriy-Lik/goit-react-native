@@ -1,10 +1,14 @@
+import 'react-native-gesture-handler';
 import { useState } from 'react';
 import { StyleSheet, View, Image } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { StatusBar } from 'expo-status-bar';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import RegistrationScreen from './src/Screens/RegistrationScreen';
-// import LoginScreen from './src/Screens/LoginScreen';
+import LoginScreen from './src/Screens/LoginScreen';
+import Home from './src/Screens/Home';
 import PhotoBG from './src/images/PhotoBG.jpg';
 
 
@@ -19,14 +23,23 @@ const App = () => {
 
   if(loadFont) {
     return (
-      <View style={styles.container}>
-        <Image source={PhotoBG} style={styles.image} />
-  
-        <RegistrationScreen />
-        {/* <LoginScreen /> */}
-        
-        <StatusBar style="auto" />
-      </View>
+      <NavigationContainer>
+        <MainStack.Navigator>
+          <MainStack.Screen name="Registration" component={RegistrationScreen} />
+          <MainStack.Screen name="Login" component={LoginScreen} />
+          <MainStack.Screen name="Home" component={Home} />
+        </MainStack.Navigator>
+        {/* <View style={styles.container}> */}
+          {/* <Image source={PhotoBG} style={styles.image} /> */}
+    
+          {/* <RegistrationScreen /> */}
+          {/* <LoginScreen /> */}
+          {/* <PostScreen /> */}
+          
+          {/* <StatusBar style="auto" /> */}
+        {/* </View> */}
+      </NavigationContainer>
+      
     );
   } else {
     return (

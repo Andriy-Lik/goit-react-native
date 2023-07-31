@@ -19,7 +19,8 @@ export const screenStyles = StyleSheet.create({
         borderRadius: 16,
     },
     title: {
-        marginVertical: 32,
+        marginTop: 32,
+        marginBottom: 32,
         textAlign: "center",
         fontFamily: 'robotoMedium',
         fontSize: 36,
