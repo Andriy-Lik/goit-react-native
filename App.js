@@ -1,15 +1,15 @@
 import 'react-native-gesture-handler';
-import { useState } from 'react';
-import { StyleSheet, View, Image } from 'react-native';
+import React, { useState } from 'react';
+// import { StyleSheet } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import RegistrationScreen from './src/Screens/RegistrationScreen';
 import LoginScreen from './src/Screens/LoginScreen';
 import Home from './src/Screens/Home';
-import PhotoBG from './src/images/PhotoBG.jpg';
+// import PhotoBG from './src/images/PhotoBG.jpg';
 
 
 const fonts = () => Font.loadAsync({
@@ -26,7 +26,7 @@ const App = () => {
   if(loadFont) {
     return (
       <NavigationContainer>
-        <MainStack.Navigator>
+        <MainStack.Navigator initialRouteName="RegistrationScreen">
           <MainStack.Screen name="Registration" component={RegistrationScreen} />
           <MainStack.Screen name="Login" component={LoginScreen} />
           <MainStack.Screen name="Home" component={Home} />
@@ -56,20 +56,20 @@ const App = () => {
   
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  },
-  image: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+//   image: {
+//     position: 'absolute',
+//     top: 0,
+//     bottom: 0,
+//     left: 0,
+//     right: 0,
+//   },
+// });
 
 export default App;

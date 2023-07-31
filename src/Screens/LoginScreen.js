@@ -3,10 +3,13 @@ import {
     View, TextInput, Text, TouchableOpacity, TouchableWithoutFeedback, 
     KeyboardAvoidingView, Alert, Platform, Keyboard 
 } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 import { screenStyles } from '../styles/screenStyles';
 import { buttonStyles } from '../styles/buttonStyles';
 
 const LoginScreen = () => {
+    const navigation = useNavigation();
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -50,7 +53,7 @@ const LoginScreen = () => {
                     <Text style={screenStyles.buttonText}>Увійти</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={screenStyles.loginLink}>
+                <TouchableOpacity style={screenStyles.loginLink} onPress={() => navigation.navigate("Registration")}>
                     <Text style={screenStyles.text}>Немає акаунту? Зареєструватися</Text>
                 </TouchableOpacity>
                 
