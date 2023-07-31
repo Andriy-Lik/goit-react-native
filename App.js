@@ -18,6 +18,8 @@ const fonts = () => Font.loadAsync({
   'robotoRegular': require('./src/fonts/Roboto-Regular.ttf'),
 });
 
+const MainStack = createStackNavigator();
+
 const App = () => {
   const [loadFont, setLoadFont] = useState(false);
 
