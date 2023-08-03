@@ -56,7 +56,7 @@ const LoginScreen = () => {
                         />
 
                         <TouchableOpacity style={regLogStyles.logPasswordShow} onPress={handleTogglePassword}>
-                            <Text>{displayText}</Text>
+                            <Text style={regLogStyles.passwordShowText}>{displayText}</Text>
                         </TouchableOpacity>
                     </KeyboardAvoidingView>
 

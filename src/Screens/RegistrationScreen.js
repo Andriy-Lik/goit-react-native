@@ -76,7 +76,7 @@ const RegistrationScreen = () => {
                             onBlur={() => setFocusPassword(false)}
                         />
                         <TouchableOpacity style={regLogStyles.regPasswordShow} onPress={handleTogglePassword}>
-                            <Text>{displayText}</Text>
+                            <Text style={regLogStyles.passwordShowText}>{displayText}</Text>
                         </TouchableOpacity>
                     </KeyboardAvoidingView>
                     
