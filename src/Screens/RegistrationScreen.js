@@ -2,15 +2,12 @@ import { useEffect, useState } from "react";
 import { View, TextInput, Text, TouchableOpacity, TouchableWithoutFeedback, ImageBackground,
     Keyboard, KeyboardAvoidingView, Platform, 
 } from "react-native";
-import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { regLogStyles } from '../styles/regLogStyles';
 import { buttonStyles } from '../styles/buttonStyles';
 
 
-const RegistrationScreen = () => {
-    const navigation = useNavigation();
-
+const RegistrationScreen = ({ navigation }) => {
     const [login, setLogin] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

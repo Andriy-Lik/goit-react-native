@@ -2,12 +2,10 @@ import { useEffect, useState } from "react";
 import { View, TextInput, Text, TouchableOpacity, TouchableWithoutFeedback, ImageBackground,
     KeyboardAvoidingView,  Platform, Keyboard 
 } from "react-native";
-import { useNavigation } from '@react-navigation/native';
 import { regLogStyles } from '../styles/regLogStyles';
 import { buttonStyles } from '../styles/buttonStyles';
 
-const LoginScreen = () => {
-    const navigation = useNavigation();
+const LoginScreen = ({ navigation }) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
