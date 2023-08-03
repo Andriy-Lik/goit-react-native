@@ -5,7 +5,7 @@ import {
     KeyboardAvoidingView, Alert, Platform, Keyboard 
 } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import { screenStyles } from '../styles/screenStyles';
+import { screenStyles } from '../styles/regLogStyles';
 import { buttonStyles } from '../styles/buttonStyles';
 
 const LoginScreen = () => {
@@ -14,12 +14,12 @@ const LoginScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const onLogin = () => {
-        console.log(email, password);
-        Alert.alert("Credentials", `${email} + ${password}`);
-        setEmail('');
-        setPassword('');
-    };
+    // const onLogin = () => {
+    //     console.log(email, password);
+    //     Alert.alert("Credentials", `${email} + ${password}`);
+    //     setEmail('');
+    //     setPassword('');
+    // };
     
     const handleEmail = text => {
         setEmail(text);
@@ -50,7 +50,7 @@ const LoginScreen = () => {
                     />
                 </KeyboardAvoidingView>
                 
-                <TouchableOpacity style={buttonStyles.button} onPress={onLogin}>
+                <TouchableOpacity style={buttonStyles.button} onPress={() => navigation.navigate("Home")}>
                     <Text style={screenStyles.buttonText}>Увійти</Text>
                 </TouchableOpacity>
 

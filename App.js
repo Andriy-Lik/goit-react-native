@@ -27,9 +27,9 @@ const App = () => {
     return (
       <NavigationContainer>
         <MainStack.Navigator initialRouteName="RegistrationScreen">
-          <MainStack.Screen name="Registration" component={RegistrationScreen} />
-          <MainStack.Screen name="Login" component={LoginScreen} />
-          <MainStack.Screen name="Home" component={Home} />
+          <MainStack.Screen name="Registration" component={RegistrationScreen} options={{ headerShown: false }} />
+          <MainStack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+          <MainStack.Screen name="Home" component={Home} options={{ headerShown: false }} />
         </MainStack.Navigator>
         {/* <View style={styles.container}> */}
           {/* <Image source={PhotoBG} style={styles.image} /> */}

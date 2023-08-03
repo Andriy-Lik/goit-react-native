@@ -1,6 +1,9 @@
 import { StyleSheet } from "react-native";
 
-export const screenStyles = StyleSheet.create({
+export const regLogStyles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
     form: {
         width: '100%',
         marginTop: 'auto',
@@ -8,6 +11,13 @@ export const screenStyles = StyleSheet.create({
         backgroundColor: '#fff',
         borderTopLeftRadius: 25,
         borderTopRightRadius: 25,
+    },
+    image: {
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
     },
     addPhoto: {
         width: 120,
@@ -45,7 +55,7 @@ export const screenStyles = StyleSheet.create({
         fontSize: 16,
     },
     regLink: {
-        marginBottom: 45,
+        marginBottom: 78,
     },
     loginLink: {
         marginBottom: 111,

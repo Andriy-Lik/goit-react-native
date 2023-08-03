@@ -1,23 +1,21 @@
-import React, { useState } from "react";
-import { View, Text } from "react-native";
-import { Feather } from '@expo/vector-icons';
-import { psStyles } from '../styles/homeScreenStyles';
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import PostsScreen from "./PostsScreen";
+import CreatePostsScreen from './CreatePostsScreen';
+import ProfileScreen from './ProfileScreen';
+
+
+const Tabs = createBottomTabNavigator();
 
 const Home = () => {
     return (
-        <View style={psStyles.container}>
-            <View style={psStyles.header}>
-                <Text style={psStyles.title}>Публікації</Text>
-                <Feather style={psStyles.iconLogOut} name="log-out" size={24}  />
-            </View>
-            <View style={psStyles.body}></View>
-            
-            <View style={psStyles.tabBar}>
-                <Feather style={psStyles.iconTabBar} name="grid" size={24} />
-                <Feather style={psStyles.iconTabBar} name="user" size={24} />
-            </View>
-            
-        </View>
+        <Tabs.Navigator
+            screenOptions={({ route }) => ({})}
+        >
+            <Tabs.Screen name="Публікації" component={PostsScreen} options={{ headerShown: false }} />
+            <Tabs.Screen name="Створити публікацію" component={CreatePostsScreen} options={{ headerShown: false }} />
+            <Tabs.Screen name="Профіль" component={ProfileScreen} options={{ headerShown: false, }} />
+        </Tabs.Navigator>
     );
 };
 

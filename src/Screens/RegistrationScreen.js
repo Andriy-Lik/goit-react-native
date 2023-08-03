@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { 
-    View, TextInput, Text, TouchableOpacity, TouchableWithoutFeedback, 
+    View, TextInput, Text, TouchableOpacity, TouchableWithoutFeedback, ImageBackground,
     Keyboard, KeyboardAvoidingView, Platform, Alert,
 } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
-import { screenStyles } from '../styles/screenStyles';
+import { regLogStyles } from '../styles/regLogStyles';
 import { buttonStyles } from '../styles/buttonStyles';
+import PhotoBG from '../images/PhotoBG.jpg';
 
 
 const RegistrationScreen = () => {
@@ -16,13 +17,13 @@ const RegistrationScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
-    const onLogin = () => {
-        console.log(login, email, password);
-        Alert.alert("Credentials", `${login} + ${email} + ${password}`);
-        setLogin('');
-        setEmail('');
-        setPassword('');
-    };
+    // const onLogin = () => {
+    //     console.log(login, email, password);
+    //     Alert.alert("Credentials", `${login} + ${email} + ${password}`);
+    //     setLogin('');
+    //     setEmail('');
+    //     setPassword('');
+    // };
 
     const handleLogin = text => {
         setLogin(text);
@@ -38,29 +39,31 @@ const RegistrationScreen = () => {
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <View style={screenStyles.form}>
-                <View style={screenStyles.addPhoto}>
+            <View style={regLogStyles.container}>
+                <ImageBackground source={require("../images/PhotoBG.jpg")} style={regLogStyles.image} />
+                <View style={regLogStyles.form}>
+                <View style={regLogStyles.addPhoto}>
                     <TouchableOpacity style={buttonStyles.addPhotoButton}>
                         <Ionicons style={buttonStyles.addPhotoIcon} name="add-circle-outline" size={25} color="#FF6C00"  />
                     </TouchableOpacity>
                 </View>
                     
-                <Text style={screenStyles.title}>Реєстрація</Text>
+                <Text style={regLogStyles.title}>Реєстрація</Text>
                 <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}>
                     <TextInput 
-                        style={screenStyles.input} 
+                        style={regLogStyles.input} 
                         value={login}
                         placeholder="Логін" 
                         onChangeText={handleLogin} 
                     />
                     <TextInput 
-                        style={screenStyles.input} 
+                        style={regLogStyles.input} 
                         value={email}
                         placeholder="Адреса електронної пошти" 
                         onChangeText={handleEmail} 
                     />
                     <TextInput 
-                        style={screenStyles.input} 
+                        style={regLogStyles.input} 
                         value={password}
                         placeholder="Пароль" 
                         onChangeText={handlePassword} 
@@ -68,13 +71,15 @@ const RegistrationScreen = () => {
                     />
                 </KeyboardAvoidingView>
                 
-                <TouchableOpacity style={buttonStyles.button} onPress={onLogin}>
-                    <Text style={screenStyles.buttonText}>Зареєстуватися</Text>
+                <TouchableOpacity style={buttonStyles.button} onPress={() => navigation.navigate("Home")}>
+                    <Text style={regLogStyles.buttonText}>Зареєстуватися</Text>
                 </TouchableOpacity>
                 
-                <TouchableOpacity style={screenStyles.regLink} onPress={() => navigation.navigate("Login")}>
-                    <Text style={screenStyles.text}>Вже є акаунт? Увійти</Text>
+                <TouchableOpacity style={regLogStyles.regLink} onPress={() => navigation.navigate("Login")}>
+                    <Text style={regLogStyles.text}>Вже є акаунт? Увійти</Text>
                 </TouchableOpacity>
+                </View>
+                
             </View>
         </TouchableWithoutFeedback>
         
