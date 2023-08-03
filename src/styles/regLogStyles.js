@@ -65,4 +65,20 @@ export const regLogStyles = StyleSheet.create({
         fontFamily: 'robotoRegular',
         fontSize: 16,
     },
+    regPasswordShow: {
+        position: "absolute",
+        right: 60,
+        transform: [{ translateX: 50 }, { translateY: 147 }],
+    },
+    logPasswordShow: {
+        position: "absolute",
+        right: 60,
+        transform: [{ translateX: 50 }, { translateY: 82 }],
+    },
+    onFocus: { 
+        borderColor: "#FF6C00", 
+    },
+    onBlur: { 
+        borderColor: "#e8e8e8", 
+    },
 });

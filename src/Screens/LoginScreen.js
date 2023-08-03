@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 import { View, TextInput, Text, TouchableOpacity, TouchableWithoutFeedback, ImageBackground,
-    KeyboardAvoidingView, Alert, Platform, Keyboard 
+    KeyboardAvoidingView,  Platform, Keyboard 
 } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { regLogStyles } from '../styles/regLogStyles';
@@ -12,20 +11,22 @@ const LoginScreen = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(true);
+    const [displayText, setDisplaytext] = useState("Показати");
+    const [focusEmail, setFocusEmail] = useState(false);
+    const [focusPassword, setFocusPassword] = useState(false);
 
-    // const onLogin = () => {
-    //     console.log(email, password);
-    //     Alert.alert("Credentials", `${email} + ${password}`);
-    //     setEmail('');
-    //     setPassword('');
-    // };
-    
-    const handleEmail = text => {
-        setEmail(text);
+    const onLogin = () => {
+        setEmail('');
+        setPassword('');
     };
 
-    const handlePassword = text => {
-        setPassword(text);
+    useEffect(() => {
+        setDisplaytext(showPassword ? "Показати" : "Приховати");
+    }, [displayText, showPassword]);
+    
+    const handleTogglePassword = () => {
+        setShowPassword(!showPassword);
     };
 
     return (
@@ -37,18 +38,26 @@ const LoginScreen = () => {
 
                     <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}>
                         <TextInput 
-                            style={regLogStyles.input} 
+                            style={[regLogStyles.input, focusEmail ? regLogStyles.inputOnFocus : regLogStyles.inputOnBlur,]} 
                             value={email}
                             placeholder="Адреса електронної пошти" 
-                            onChangeText={handleEmail} 
+                            onChangeText={setEmail} 
+                            onFocus={() => setFocusEmail(true)}
+                            onBlur={() => setFocusEmail(false)}
                         />
                         <TextInput 
-                            style={regLogStyles.input} 
+                            style={[regLogStyles.input, focusPassword ? regLogStyles.inputOnFocus : regLogStyles.inputOnBlur,]} 
                             value={password}
                             placeholder="Пароль" 
-                            onChangeText={handlePassword}
-                            secureTextEntry 
+                            onChangeText={setEmail}
+                            secureTextEntry={showPassword}
+                            onFocus={() => setFocusPassword(true)}
+                            onBlur={() => setFocusPassword(false)} 
                         />
+
+                        <TouchableOpacity style={regLogStyles.logPasswordShow} onPress={handleTogglePassword}>
+                            <Text>{displayText}</Text>
+                        </TouchableOpacity>
                     </KeyboardAvoidingView>
 
                     <TouchableOpacity style={buttonStyles.button} onPress={() => navigation.navigate("Home")}>

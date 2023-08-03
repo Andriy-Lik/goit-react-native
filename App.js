@@ -1,15 +1,12 @@
 import 'react-native-gesture-handler';
 import React, { useState } from 'react';
-// import { StyleSheet } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-// import { StatusBar } from 'expo-status-bar';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import RegistrationScreen from './src/Screens/RegistrationScreen';
 import LoginScreen from './src/Screens/LoginScreen';
 import Home from './src/Screens/Home';
-// import PhotoBG from './src/images/PhotoBG.jpg';
 
 
 const fonts = () => Font.loadAsync({
@@ -31,15 +28,6 @@ const App = () => {
           <MainStack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
           <MainStack.Screen name="Home" component={Home} options={{ headerShown: false }} />
         </MainStack.Navigator>
-        {/* <View style={styles.container}> */}
-          {/* <Image source={PhotoBG} style={styles.image} /> */}
-    
-          {/* <RegistrationScreen /> */}
-          {/* <LoginScreen /> */}
-          {/* <PostScreen /> */}
-          
-          {/* <StatusBar style="auto" /> */}
-        {/* </View> */}
       </NavigationContainer>
       
     );

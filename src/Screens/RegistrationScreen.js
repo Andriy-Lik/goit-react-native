@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { View, TextInput, Text, TouchableOpacity, TouchableWithoutFeedback, ImageBackground,
-    Keyboard, KeyboardAvoidingView, Platform, Alert, 
+    Keyboard, KeyboardAvoidingView, Platform, 
 } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
@@ -14,25 +14,26 @@ const RegistrationScreen = () => {
     const [login, setLogin] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(true);
+    const [displayText, setDisplaytext] = useState("Показати");
+    const [focusLogin, setFocusLogin] = useState(false);
+    const [focusEmail, setFocusEmail] = useState(false);
+    const [focusPassword, setFocusPassword] = useState(false);
     
-    // const onLogin = () => {
-    //     console.log(login, email, password);
-    //     Alert.alert("Credentials", `${login} + ${email} + ${password}`);
-    //     setLogin('');
-    //     setEmail('');
-    //     setPassword('');
-    // };
-
-    const handleLogin = text => {
-        setLogin(text);
+    const onLogin = () => {
+        // console.log(login, email, password);
+        // Alert.alert("Credentials", `${login} + ${email} + ${password}`);
+        setLogin('');
+        setEmail('');
+        setPassword('');
     };
 
-    const handleEmail = text => {
-        setEmail(text);
-    };
+    useEffect(() => {
+        setDisplaytext(showPassword ? "Показати" : "Приховати");
+    }, [displayText, showPassword]);
 
-    const handlePassword = text => {
-        setPassword(text);
+    const handleTogglePassword = () => {
+        setShowPassword(!showPassword);
     };
 
     return (
@@ -49,25 +50,34 @@ const RegistrationScreen = () => {
                     <Text style={regLogStyles.title}>Реєстрація</Text>
                     <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}>
                         <TextInput 
-                            style={regLogStyles.input} 
+                            style={[ regLogStyles.input, focusLogin ? regLogStyles.onFocus : regLogStyles.onBlur, ]} 
                             value={login}
                             name="login"
                             placeholder="Логін" 
-                            onChangeText={handleLogin} 
+                            onChangeText={setLogin} 
+                            onFocus={() => setFocusLogin(true)}
+                            onBlur={() => setFocusLogin(false)}
                         />
                         <TextInput 
-                            style={regLogStyles.input} 
+                            style={[ regLogStyles.input, focusEmail ? regLogStyles.onFocus : regLogStyles.onBlur, ]} 
                             value={email}
                             placeholder="Адреса електронної пошти" 
-                            onChangeText={handleEmail} 
+                            onChangeText={setEmail}
+                            onFocus={() => setFocusEmail(true)}
+                            onBlur={() => setFocusEmail(false)} 
                         />
                         <TextInput 
-                            style={regLogStyles.input} 
+                            style={[ regLogStyles.input, focusPassword ? regLogStyles.onFocus : regLogStyles.onBlur, ]} 
                             value={password}
                             placeholder="Пароль" 
-                            onChangeText={handlePassword} 
-                            secureTextEntry
+                            onChangeText={setPassword} 
+                            secureTextEntry={showPassword}
+                            onFocus={() => setFocusPassword(true)}
+                            onBlur={() => setFocusPassword(false)}
                         />
+                        <TouchableOpacity style={regLogStyles.regPasswordShow} onPress={handleTogglePassword}>
+                            <Text>{displayText}</Text>
+                        </TouchableOpacity>
                     </KeyboardAvoidingView>
                     
                     <TouchableOpacity style={buttonStyles.button} onPress={() => navigation.navigate("Home")}>
