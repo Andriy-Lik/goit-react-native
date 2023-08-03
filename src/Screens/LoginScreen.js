@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 // import { useDispatch } from "react-redux";
-import { 
-    View, TextInput, Text, TouchableOpacity, TouchableWithoutFeedback, 
+import { View, TextInput, Text, TouchableOpacity, TouchableWithoutFeedback, ImageBackground,
     KeyboardAvoidingView, Alert, Platform, Keyboard 
 } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import { screenStyles } from '../styles/regLogStyles';
+import { regLogStyles } from '../styles/regLogStyles';
 import { buttonStyles } from '../styles/buttonStyles';
 
 const LoginScreen = () => {
@@ -31,33 +30,35 @@ const LoginScreen = () => {
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <View style={screenStyles.form}>
-                <Text style={screenStyles.title}>Увійти</Text>
+            <View style={regLogStyles.container}>
+                <ImageBackground source={require("../images/PhotoBG.jpg")} style={regLogStyles.image} />
+                <View style={regLogStyles.form}>
+                    <Text style={regLogStyles.title}>Увійти</Text>
 
-                <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}>
-                    <TextInput 
-                        style={screenStyles.input} 
-                        value={email}
-                        placeholder="Адреса електронної пошти" 
-                        onChangeText={handleEmail} 
-                    />
-                    <TextInput 
-                        style={screenStyles.input} 
-                        value={password}
-                        placeholder="Пароль" 
-                        onChangeText={handlePassword}
-                        secureTextEntry 
-                    />
-                </KeyboardAvoidingView>
-                
-                <TouchableOpacity style={buttonStyles.button} onPress={() => navigation.navigate("Home")}>
-                    <Text style={screenStyles.buttonText}>Увійти</Text>
-                </TouchableOpacity>
+                    <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}>
+                        <TextInput 
+                            style={regLogStyles.input} 
+                            value={email}
+                            placeholder="Адреса електронної пошти" 
+                            onChangeText={handleEmail} 
+                        />
+                        <TextInput 
+                            style={regLogStyles.input} 
+                            value={password}
+                            placeholder="Пароль" 
+                            onChangeText={handlePassword}
+                            secureTextEntry 
+                        />
+                    </KeyboardAvoidingView>
 
-                <TouchableOpacity style={screenStyles.loginLink} onPress={() => navigation.navigate("Registration")}>
-                    <Text style={screenStyles.text}>Немає акаунту? Зареєструватися</Text>
-                </TouchableOpacity>
-                
+                    <TouchableOpacity style={buttonStyles.button} onPress={() => navigation.navigate("Home")}>
+                        <Text style={regLogStyles.buttonText}>Увійти</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={regLogStyles.loginLink} onPress={() => navigation.navigate("Registration")}>
+                        <Text style={regLogStyles.text}>Немає акаунту? Зареєструватися</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </TouchableWithoutFeedback>
         

@@ -30,6 +30,7 @@ export const psStyles = StyleSheet.create({
     tabBar: {
         display: "flex",
         alignItems: 'center',
+        // flexDirection: "row",
         // justifyContent: 'center',
         paddingTop: 9,
         height: 83,
@@ -37,6 +38,7 @@ export const psStyles = StyleSheet.create({
         borderTopColor: "#bdbdbd",
     },
     iconTabBar: {
+
         color: "rgba(33, 33, 33, 0.8)",
     },
     asd: {},

@@ -58,7 +58,7 @@ export const regLogStyles = StyleSheet.create({
         marginBottom: 78,
     },
     loginLink: {
-        marginBottom: 111,
+        marginBottom: 144,
     },
     text: {
         textAlign: "center",
