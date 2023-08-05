@@ -1,17 +1,41 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    AddBackColor: {
-        backgroundColor: "#FF6C00",
-        height: 40,
-        borderRadius: 25,
+    container: {
+        paddingLeft: 16,
+        paddingRight: 16,
+        flex: 1,
+        backgroundColor: "#FFFFFF",
+    },
+    FotoContainer: {
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginBottom: 8,
+        marginTop: 34,
+        width: "100%",
+        height: 240,
+        backgroundColor: "#F6F6F6",
+        borderRadius: 15,
+        borderWidth: 1,
+        borderColor: "#E8E8E8",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 50,
-        color: "#FFFFFF",
     },
-    AddRextColor: {
-        color: "#FFFFFF",
+    iconCameraBox: {},
+    iconCameraButton: {
+        width: 60,
+        height: 60,
+        backgroundColor: "#FFFFFF",
+        borderRadius: 30,
+    },
+    iconCamera: {
+        transform: [{ translateX: 18 }, { translateY: 18 }],
+    },
+    addPhotoButton: {},
+    addPhotoText: {
+        fontFamily: 'robotoRegular',
+        fontSize: 16,
+        color: '#bdbdbd',
     },
     input: {
         borderBottomWidth: 1,
@@ -37,46 +61,25 @@ export const styles = StyleSheet.create({
         position: "absolute",
         marginTop: 13,
     },
-    addPhotoContainer: {
-        backgroundColor: "#F6F6F6",
-        height: 40,
+    button: {
+        padding: 16,
         borderRadius: 25,
+        backgroundColor: "#F6F6F6",
         justifyContent: "center",
         alignItems: "center",
         marginTop: 50,
     },
-    addTextPhoto: {
-        color: "#BDBDBD",
+    buttonText: {
+        color: "#bdbdbd",
+        textAlign: "center",
+        fontFamily: 'robotoRegular',
+        fontSize: 16,
     },
-    iconCamera: {
-        transform: [{ translateX: 18 }, { translateY: 18 }],
-    },
-    FotoContainer: {
-        marginLeft: "auto",
-        marginRight: "auto",
-        marginBottom: 8,
-        marginTop: 34,
-        width: "100%",
-        height: 240,
-        backgroundColor: "#F6F6F6",
-        borderRadius: 15,
-        borderWidth: 1,
-        borderColor: "#E8E8E8",
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    iconCameraContauner: {
-        width: 60,
-        height: 60,
-        backgroundColor: "#FFFFFF",
-        borderRadius: 30,
-    },
-    
-    container: {
-        paddingLeft: 16,
-        paddingRight: 16,
+    deleteContainer: {
         flex: 1,
-        backgroundColor: "#FFFFFF",
+        alignItems: "center",
+        justifyContent: "flex-end",
+        marginBottom: 34,
     },
     deleteIcon: {
         backgroundColor: "#F6F6F6",
@@ -84,11 +87,18 @@ export const styles = StyleSheet.create({
         justifyContent: "center",
         width: 70,
         height: 40,
-        borderRadius: 40,
+        borderRadius: 20,
     },
-    deleteContainer: {
-        flex: 1,
+    AddBackColor: {
+        backgroundColor: "#FF6C00",
+        height: 40,
+        borderRadius: 25,
+        justifyContent: "center",
         alignItems: "center",
-        justifyContent: "flex-end",
+        marginTop: 50,
+        color: "#FFFFFF",
+    },
+    AddRextColor: {
+        color: "#FFFFFF",
     },
 });

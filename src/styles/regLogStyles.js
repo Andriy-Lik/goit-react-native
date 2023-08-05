@@ -40,13 +40,14 @@ export const regLogStyles = StyleSheet.create({
         height: 50,
         marginBottom: 16,
         padding: 16,
-        color: '#BDBDBD',
+        color: '#bdbdbd',
         backgroundColor: '#F6F6F6',
         borderColor: '#E8E8E8',
         borderWidth: 1,
         fontFamily: 'robotoRegular',
-        borderRadius: 8,
         fontSize: 16,
+        borderRadius: 8,
+        
     },
     buttonText: {
         color: '#fff',
