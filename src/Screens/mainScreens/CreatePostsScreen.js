@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { View, Text, TouchableOpacity, ImageBackground, TextInput, } from "react-native";
+import { Camera } from "expo-camera";
 import { Feather } from '@expo/vector-icons';
 import { styles } from '../../styles/createPostsStyles';
 
@@ -11,16 +12,13 @@ const CreatePostScreen = ({ navigation }) => {
   return (
     <>
       <View style={styles.container}>
-          <ImageBackground
-            style={styles.FotoContainer}
-            source={{ uri: form.imageUrl }}>
-            <View style={styles.IconContainerCamera}>
-              <TouchableOpacity
-                style={styles.iconCameraContauner}>
-                <Feather name="camera" size={24} color="#bdbdbd" style={styles.iconCamera} />
-              </TouchableOpacity>
-            </View>
-          </ImageBackground>
+        <ImageBackground style={styles.FotoContainer}>
+          <View style={styles.IconContainerCamera}>
+            <TouchableOpacity style={styles.iconCameraContauner}>
+              <Feather name="camera" size={24} color="#bdbdbd" style={styles.iconCamera} />
+            </TouchableOpacity>
+          </View>
+        </ImageBackground>
           <TouchableOpacity>
             <Text>Завантажте фото</Text>
           </TouchableOpacity>
