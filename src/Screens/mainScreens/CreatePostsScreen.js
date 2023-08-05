@@ -14,12 +14,12 @@ const CreatePostScreen = ({ navigation }) => {
       <View style={styles.container}>
         <ImageBackground style={styles.FotoContainer}>
           <View style={styles.IconContainerCamera}>
-            <TouchableOpacity style={styles.iconCameraContauner}>
+            <TouchableOpacity style={styles.iconCameraContauner} onPress={() => {}}>
               <Feather name="camera" size={24} color="#bdbdbd" style={styles.iconCamera} />
             </TouchableOpacity>
           </View>
         </ImageBackground>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {}}>
             <Text>Завантажте фото</Text>
           </TouchableOpacity>
 
@@ -34,14 +34,14 @@ const CreatePostScreen = ({ navigation }) => {
               <TextInput placeholder="Місцевість..." style={styles.inputLocal} />
               <Feather name="map-pin" size={24} color="#bdbdbd" style={styles.marker} />
             </View>
-            <TouchableOpacity style={styles.addPhotoContainer}>
+            <TouchableOpacity style={styles.addPhotoContainer} onPress={() => {}}>
               <Text style={styles.addTextPhoto}>
                 Опублікувати
               </Text>
             </TouchableOpacity>
           </View>
           <View style={styles.deleteContainer}>
-            <TouchableOpacity style={styles.deleteIcon}>
+            <TouchableOpacity style={styles.deleteIcon} onPress={() => {}}>
               <Feather name="trash-2" size={24} color="#bdbdbd" />
             </TouchableOpacity>
           </View>
