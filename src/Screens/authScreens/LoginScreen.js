@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { View, TextInput, Text, TouchableOpacity, TouchableWithoutFeedback, ImageBackground,
     KeyboardAvoidingView,  Platform, Keyboard 
 } from "react-native";
-import { regLogStyles } from '../styles/regLogStyles';
-import { buttonStyles } from '../styles/buttonStyles';
+import { regLogStyles } from '../../styles/regLogStyles';
+import { buttonStyles } from '../../styles/buttonStyles';
+
 
 const LoginScreen = ({ navigation }) => {
 
@@ -30,7 +31,7 @@ const LoginScreen = ({ navigation }) => {
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={regLogStyles.container}>
-                <ImageBackground source={require("../images/PhotoBG.jpg")} style={regLogStyles.image} />
+                <ImageBackground source={require("../../images/PhotoBG.jpg")} style={regLogStyles.image} />
                 <View style={regLogStyles.form}>
                     <Text style={regLogStyles.title}>Увійти</Text>
 
@@ -58,7 +59,7 @@ const LoginScreen = ({ navigation }) => {
                         </TouchableOpacity>
                     </KeyboardAvoidingView>
 
-                    <TouchableOpacity style={buttonStyles.button} onPress={() => navigation.navigate("Home")}>
+                    <TouchableOpacity style={buttonStyles.button} onPress={onLogin}>
                         <Text style={regLogStyles.buttonText}>Увійти</Text>
                     </TouchableOpacity>
 

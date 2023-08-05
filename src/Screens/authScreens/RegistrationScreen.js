@@ -3,8 +3,8 @@ import { View, TextInput, Text, TouchableOpacity, TouchableWithoutFeedback, Imag
     Keyboard, KeyboardAvoidingView, Platform, 
 } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
-import { regLogStyles } from '../styles/regLogStyles';
-import { buttonStyles } from '../styles/buttonStyles';
+import { regLogStyles } from '../../styles/regLogStyles';
+import { buttonStyles } from '../../styles/buttonStyles';
 
 
 const RegistrationScreen = ({ navigation }) => {
@@ -18,8 +18,6 @@ const RegistrationScreen = ({ navigation }) => {
     const [focusPassword, setFocusPassword] = useState(false);
     
     const onLogin = () => {
-        // console.log(login, email, password);
-        // Alert.alert("Credentials", `${login} + ${email} + ${password}`);
         setLogin('');
         setEmail('');
         setPassword('');
@@ -36,7 +34,7 @@ const RegistrationScreen = ({ navigation }) => {
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={regLogStyles.container}>
-                <ImageBackground source={require("../images/PhotoBG.jpg")} style={regLogStyles.image} />
+                <ImageBackground source={require("../../images/PhotoBG.jpg")} style={regLogStyles.image} />
                 <View style={regLogStyles.form}>
                     <View style={regLogStyles.addPhoto}>
                         <TouchableOpacity style={buttonStyles.addPhotoButton}>
@@ -77,7 +75,7 @@ const RegistrationScreen = ({ navigation }) => {
                         </TouchableOpacity>
                     </KeyboardAvoidingView>
                     
-                    <TouchableOpacity style={buttonStyles.button} onPress={() => navigation.navigate("Home")}>
+                    <TouchableOpacity style={buttonStyles.button} onPress={onLogin}>
                         <Text style={regLogStyles.buttonText}>Зареєстуватися</Text>
                     </TouchableOpacity>
                     

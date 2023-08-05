@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React, { useState } from 'react';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import Navigation from './src/Screens/Navigate';
+import Navigation from './src/Screens/Navigation';
 
 
 const fonts = () => Font.loadAsync({
