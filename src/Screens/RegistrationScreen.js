@@ -34,7 +34,7 @@ const RegistrationScreen = ({ navigation }) => {
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={regLogStyles.container}>
-                <ImageBackground source={require("../../images/PhotoBG.jpg")} style={regLogStyles.image} />
+                <ImageBackground source={require("../images/PhotoBG.jpg")} style={regLogStyles.image} />
                 <View style={regLogStyles.form}>
                     <View style={regLogStyles.addPhoto}>
                         <TouchableOpacity style={buttonStyles.addPhotoButton}>
