@@ -12,7 +12,7 @@ const PostScreen = ({ route, navigation }) => {
                 <View style={styles.userPhotoContainer}>
                     <Image
                         style={styles.userImage}
-                        source={require("../../images/Photo60.jpg")}
+                        source={require("../images/Photo60.jpg")}
                     />
                     <View style={styles.userTextContainer}>
                         <Text style={styles.userTextName}>Natali Romanova</Text>

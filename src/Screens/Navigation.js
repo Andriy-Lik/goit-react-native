@@ -1,8 +1,8 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import RegistrationScreen from './authScreens/RegistrationScreen';
-import LoginScreen from './authScreens/LoginScreen';
+import RegistrationScreen from './RegistrationScreen';
+import LoginScreen from './LoginScreen';
 import Home from "./Home";
 
 

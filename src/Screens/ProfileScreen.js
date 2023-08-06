@@ -2,7 +2,7 @@ import { useState } from "react";
 import { View, Text, ImageBackground, Image, } from "react-native";
 import { Feather } from '@expo/vector-icons';
 import { styles } from '../styles/profileStyles';
-import Photo120 from '../../images/Photo120.jpg';
+import Photo120 from '../images/Photo120.jpg';
 
 
 const ProfileScreen = () => {
@@ -13,7 +13,7 @@ const ProfileScreen = () => {
     <View style={styles.container}>
       <ImageBackground
         style={styles.backImage}
-        source={require("../../images/PhotoBG.jpg")}>
+        source={require("../images/PhotoBG.jpg")}>
         <View style={styles.containerProfile}>
           <View style={styles.avatar}>
             
