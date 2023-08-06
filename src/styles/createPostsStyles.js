@@ -2,12 +2,12 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
+        flex: 1,
         paddingLeft: 16,
         paddingRight: 16,
-        flex: 1,
         backgroundColor: "#FFFFFF",
     },
-    FotoContainer: {
+    fotoContainer: {
         marginLeft: "auto",
         marginRight: "auto",
         marginBottom: 8,
@@ -56,7 +56,7 @@ export const styles = StyleSheet.create({
         height: 50,
         paddingLeft: 32,
     },
-    marker: {
+    mapIcon: {
         flex: 1,
         position: "absolute",
         marginTop: 13,
@@ -95,7 +95,7 @@ export const styles = StyleSheet.create({
         justifyContent: "flex-end",
         marginBottom: 34,
     },
-    deleteIcon: {
+    deleteButton: {
         backgroundColor: "#F6F6F6",
         alignItems: "center",
         justifyContent: "center",
