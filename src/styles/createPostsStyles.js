@@ -63,14 +63,28 @@ export const styles = StyleSheet.create({
     },
     button: {
         padding: 16,
+        marginTop: 50,
         borderRadius: 25,
-        backgroundColor: "#F6F6F6",
+        backgroundColor: "#f6f6fF6",
         justifyContent: "center",
         alignItems: "center",
+    },
+    activeButton: {
+        padding: 16,
         marginTop: 50,
+        borderRadius: 25,
+        backgroundColor: "#ff6c00",
+        justifyContent: "center",
+        alignItems: "center",
     },
     buttonText: {
         color: "#bdbdbd",
+        textAlign: "center",
+        fontFamily: 'robotoRegular',
+        fontSize: 16,
+    },
+    activeButtonText: {
+        color: "#ffffff",
         textAlign: "center",
         fontFamily: 'robotoRegular',
         fontSize: 16,
@@ -88,17 +102,5 @@ export const styles = StyleSheet.create({
         width: 70,
         height: 40,
         borderRadius: 20,
-    },
-    AddBackColor: {
-        backgroundColor: "#FF6C00",
-        height: 40,
-        borderRadius: 25,
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 50,
-        color: "#FFFFFF",
-    },
-    AddRextColor: {
-        color: "#FFFFFF",
     },
 });
