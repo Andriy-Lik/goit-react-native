@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { View, Text, ImageBackground, Image, } from "react-native";
 import { Feather } from '@expo/vector-icons';
-import { styles } from '../../styles/profileStyles';
+import { styles } from '../styles/profileStyles';
 import Photo120 from '../../images/Photo120.jpg';
 
 

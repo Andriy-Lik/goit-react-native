@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, FlatList, Image, ScrollView, TouchableOpacity } from "react-native";
-import { styles } from '../../styles/postsStyles';
+import { styles } from '../styles/postsStyles';
 
 
 const PostScreen = ({ route, navigation }) => {

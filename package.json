@@ -37,11 +37,5 @@
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
-  "expo": {
-    "jsEngine": "hermes",
-    "ios": {
-      "jsEngine": "jsc"
-    }
-  },
   "private": true
 }

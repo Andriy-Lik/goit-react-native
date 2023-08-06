@@ -3,8 +3,8 @@ import { View, TextInput, Text, TouchableOpacity, TouchableWithoutFeedback, Imag
     Keyboard, KeyboardAvoidingView, Platform, 
 } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
-import { regLogStyles } from '../../styles/regLogStyles';
-import { buttonStyles } from '../../styles/buttonStyles';
+import { regLogStyles } from '../styles/regLogStyles';
+import { buttonStyles } from '../styles/buttonStyles';
 
 
 const RegistrationScreen = ({ navigation }) => {

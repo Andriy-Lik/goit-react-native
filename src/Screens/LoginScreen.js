@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { View, TextInput, Text, TouchableOpacity, TouchableWithoutFeedback, ImageBackground,
     KeyboardAvoidingView,  Platform, Keyboard 
 } from "react-native";
-import { regLogStyles } from '../../styles/regLogStyles';
-import { buttonStyles } from '../../styles/buttonStyles';
+import { regLogStyles } from '../styles/regLogStyles';
+import { buttonStyles } from '../styles/buttonStyles';
 
 
 const LoginScreen = ({ navigation }) => {

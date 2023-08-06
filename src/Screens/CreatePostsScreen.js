@@ -2,7 +2,7 @@ import { useState } from "react";
 import { View, Text, TouchableOpacity, ImageBackground, TextInput, } from "react-native";
 import { Camera } from "expo-camera";
 import { Feather } from '@expo/vector-icons';
-import { styles } from '../../styles/createPostsStyles';
+import { styles } from '../styles/createPostsStyles';
 
 
 const CreatePostScreen = ({ navigation }) => {
